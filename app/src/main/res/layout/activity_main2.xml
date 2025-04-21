@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FDECEC"
+    tools:context=".MainActivity2">
+
+    <TextView
+        android:id="@+id/textTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="78dp"
+        android:layout_marginBottom="146dp"
+        android:fontFamily="casual"
+        android:text="TIME: 20"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/gridLayoutBlue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="64dp"
+        android:fontFamily="casual"
+        android:text="SCORE : 0"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/gridLayoutOrange"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textTime" />
+
+    <androidx.gridlayout.widget.GridLayout
+        android:id="@+id/gridLayoutOrange"
+        android:layout_width="306dp"
+        android:layout_height="308dp"
+        android:layout_marginStart="47dp"
+        android:layout_marginEnd="47dp"
+        android:layout_marginBottom="140dp"
+        android:visibility="invisible"
+        app:layout_column="0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textScore"
+        app:layout_row="0">
+
+        <ImageView
+            android:id="@+id/orange1"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:layout_column="0"
+            app:layout_row="0"
+            app:srcCompat="@drawable/kenny" />
+
+        <ImageView
+            android:id="@+id/orange2"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:layout_column="1"
+            app:layout_row="0"
+            app:srcCompat="@drawable/kenny" />
+
+        <ImageView
+            android:id="@+id/orange3"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:layout_column="2"
+            app:layout_row="0"
+            app:srcCompat="@drawable/kenny" />
+
+        <ImageView
+            android:id="@+id/orange4"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:layout_column="0"
+            app:layout_row="1"
+            app:srcCompat="@drawable/kenny" />
+
+        <ImageView
+            android:id="@+id/orange5"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:layout_column="1"
+            app:layout_row="1"
+            app:srcCompat="@drawable/kenny" />
+
+        <ImageView
+            android:id="@+id/orange6"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:layout_column="2"
+            app:layout_row="1"
+            app:srcCompat="@drawable/kenny" />
+
+
+        <ImageView
+            android:id="@+id/orange7"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:layout_column="0"
+            app:layout_row="2"
+            app:srcCompat="@drawable/kenny" />
+
+        <ImageView
+            android:id="@+id/orange8"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:layout_column="1"
+            app:layout_row="2"
+            app:srcCompat="@drawable/kenny" />
+
+        <ImageView
+            android:id="@+id/orange9"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:layout_column="2"
+            app:layout_row="2"
+            app:srcCompat="@drawable/kenny" />
+
+    </androidx.gridlayout.widget.GridLayout>
+
+    <androidx.gridlayout.widget.GridLayout
+        android:id="@+id/gridLayoutPink"
+        android:layout_width="306dp"
+        android:layout_height="308dp"
+        android:layout_marginStart="51dp"
+        android:layout_marginEnd="51dp"
+        android:visibility="invisible"
+        app:layout_column="1"
+        app:layout_constraintBottom_toBottomOf="@+id/gridLayoutOrange"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/gridLayoutOrange"
+        app:layout_row="0">
+
+        <ImageView
+            android:id="@+id/pink1"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:layout_column="0"
+            app:layout_row="0"
+            app:srcCompat="@drawable/kenny_pink" />
+
+        <ImageView
+            android:id="@+id/pink2"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:layout_column="1"
+            app:layout_row="0"
+            app:srcCompat="@drawable/kenny_pink" />
+
+        <ImageView
+            android:id="@+id/pink3"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:layout_column="2"
+            app:layout_row="0"
+            app:srcCompat="@drawable/kenny_pink" />
+
+        <ImageView
+            android:id="@+id/pink4"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:layout_column="0"
+            app:layout_row="1"
+            app:srcCompat="@drawable/kenny_pink" />
+
+        <ImageView
+            android:id="@+id/pink5"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:layout_column="1"
+            app:layout_row="1"
+            app:srcCompat="@drawable/kenny_pink" />
+
+        <ImageView
+            android:id="@+id/pink6"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:layout_column="2"
+            app:layout_row="1"
+            app:srcCompat="@drawable/kenny_pink" />
+
+
+        <ImageView
+            android:id="@+id/pink7"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:layout_column="0"
+            app:layout_row="2"
+            app:srcCompat="@drawable/kenny_pink" />
+
+        <ImageView
+            android:id="@+id/pink8"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:layout_column="1"
+            app:layout_row="2"
+            app:srcCompat="@drawable/kenny_pink" />
+
+        <ImageView
+            android:id="@+id/pink9"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:layout_column="2"
+            app:layout_row="2"
+            app:srcCompat="@drawable/kenny_pink" />
+
+    </androidx.gridlayout.widget.GridLayout>
+
+
+    <androidx.gridlayout.widget.GridLayout
+        android:id="@+id/gridLayoutBlue"
+        android:layout_width="306dp"
+        android:layout_height="308dp"
+        android:layout_marginStart="51dp"
+        android:layout_marginEnd="51dp"
+        android:layout_marginBottom="140dp"
+        android:visibility="invisible"
+        app:layout_column="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textTime"
+        app:layout_row="0">
+
+        <ImageView
+            android:id="@+id/blue1"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:layout_column="0"
+            app:layout_row="0"
+            app:srcCompat="@drawable/kenny_blue" />
+
+        <ImageView
+            android:id="@+id/blue2"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:layout_column="1"
+            app:layout_row="0"
+            app:srcCompat="@drawable/kenny_blue" />
+
+        <ImageView
+            android:id="@+id/blue3"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:layout_column="2"
+            app:layout_row="0"
+            app:srcCompat="@drawable/kenny_blue" />
+
+        <ImageView
+            android:id="@+id/blue4"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:layout_column="0"
+            app:layout_row="1"
+            app:srcCompat="@drawable/kenny_blue" />
+
+        <ImageView
+            android:id="@+id/blue5"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:layout_column="1"
+            app:layout_row="1"
+            app:srcCompat="@drawable/kenny_blue" />
+
+        <ImageView
+            android:id="@+id/blue6"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:layout_column="2"
+            app:layout_row="1"
+            app:srcCompat="@drawable/kenny_blue" />
+
+
+        <ImageView
+            android:id="@+id/blue7"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:layout_column="0"
+            app:layout_row="2"
+            app:srcCompat="@drawable/kenny_blue" />
+
+        <ImageView
+            android:id="@+id/blue8"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:layout_column="1"
+            app:layout_row="2"
+            app:srcCompat="@drawable/kenny_blue" />
+
+        <ImageView
+            android:id="@+id/blue9"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:layout_column="2"
+            app:layout_row="2"
+            app:srcCompat="@drawable/kenny_blue" />
+
+    </androidx.gridlayout.widget.GridLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
