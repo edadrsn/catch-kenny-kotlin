@@ -12,23 +12,23 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="74dp"
+        android:layout_marginBottom="29dp"
         android:fontFamily="casual"
         android:text="CATCH KENNY"
         android:textSize="35sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/nameText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.143" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/nameText"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
-        android:layout_marginTop="208dp"
-        android:layout_marginBottom="27dp"
+        android:layout_marginBottom="34dp"
         android:ems="12"
         android:fontFamily="casual"
         android:hint="User Name"
@@ -39,20 +39,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <EditText
         android:id="@+id/mailText"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
-        android:layout_marginBottom="62dp"
+        android:layout_marginBottom="25dp"
         android:ems="12"
         android:fontFamily="casual"
         android:hint="User Email"
         android:inputType="text"
         android:textColorHint="#4B4949"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/textChoose"
+        app:layout_constraintBottom_toTopOf="@+id/btnSave"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -62,8 +62,7 @@
         android:id="@+id/textChoose"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginBottom="44dp"
+        android:layout_marginBottom="43dp"
         android:fontFamily="casual"
         android:text="CHOOSE YOUR KENNY !"
         android:textSize="25sp"
@@ -72,15 +71,48 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mailText" />
+        app:layout_constraintTop_toBottomOf="@+id/btnSave" />
+
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="36dp"
+        android:backgroundTint="#B62727"
+        android:fontFamily="casual"
+        android:onClick="save"
+        android:text="Save"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textChoose"
+        app:layout_constraintEnd_toStartOf="@+id/btnDelete"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mailText"
+        tools:ignore="OnClick" />
+
+    <Button
+        android:id="@+id/btnDelete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:backgroundTint="#B62727"
+        android:fontFamily="casual"
+        android:onClick="delete"
+        android:text="Delete"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnSave"
+        app:layout_constraintTop_toBottomOf="@+id/mailText"
+        tools:ignore="OnClick" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="303dp"
-        android:layout_height="103dp"
-        android:layout_marginStart="41dp"
-        android:layout_marginEnd="41dp"
-        android:layout_marginBottom="66dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="39dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@+id/btnStart"
         app:layout_constraintEnd_toEndOf="parent"
@@ -92,7 +124,9 @@
             android:id="@+id/orangeKenny"
             android:layout_width="100dp"
             android:layout_height="100dp"
+            android:onClick="btnOrange"
             app:srcCompat="@drawable/kenny"
+            tools:ignore="OnClick"
             tools:layout_editor_absoluteX="26dp"
             tools:layout_editor_absoluteY="501dp" />
 
@@ -100,7 +134,9 @@
             android:id="@+id/pinkKenny"
             android:layout_width="100dp"
             android:layout_height="100dp"
+            android:onClick="btnPink"
             app:srcCompat="@drawable/kenny_pink"
+            tools:ignore="OnClick"
             tools:layout_editor_absoluteX="155dp"
             tools:layout_editor_absoluteY="501dp" />
 
@@ -108,7 +144,9 @@
             android:id="@+id/blueKenny"
             android:layout_width="100dp"
             android:layout_height="100dp"
+            android:onClick="btnBlue"
             app:srcCompat="@drawable/kenny_blue"
+            tools:ignore="OnClick"
             tools:layout_editor_absoluteX="270dp"
             tools:layout_editor_absoluteY="501dp" />
 
@@ -118,10 +156,8 @@
         android:id="@+id/btnStart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginEnd="50dp"
-        android:layout_marginBottom="100dp"
-        android:backgroundTint="#6A4040"
+        android:layout_marginBottom="55dp"
+        android:backgroundTint="#B62727"
         android:fontFamily="casual"
         android:onClick="startGame"
         android:text="START GAME"
