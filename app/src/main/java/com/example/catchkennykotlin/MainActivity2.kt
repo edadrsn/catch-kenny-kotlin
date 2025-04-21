@@ -1,6 +1,7 @@
 package com.example.catchkennykotlin
 
 import android.os.Bundle
+import android.view.View
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -16,6 +17,17 @@ class MainActivity2 : AppCompatActivity() {
         enableEdgeToEdge()
         binding=ActivityMain2Binding.inflate(layoutInflater)
         setContentView(binding.root)
+
+
+        val getSelectedKenny=intent.getStringExtra("selectedKenny")
+        if(getSelectedKenny.equals("orange")){
+            binding.gridLayoutOrange.visibility= View.VISIBLE
+        }else if(getSelectedKenny.equals("pink")){
+            binding.gridLayoutPink.visibility=View.VISIBLE
+        }
+        else{
+            binding.gridLayoutBlue.visibility=View.VISIBLE
+        }
 
     }
 }

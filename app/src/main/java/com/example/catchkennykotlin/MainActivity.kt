@@ -46,8 +46,8 @@ class MainActivity : AppCompatActivity() {
         binding.btnStart.isEnabled=true
     }
 
-    fun btnStart(view: View){
-        val intent= Intent(this@MainActivity,MainActivity2::class.java)
+    fun startGame(view: View){
+        val intent = Intent(this@MainActivity,MainActivity2::class.java)
         intent.putExtra("selectedKenny",selectedKenny)
         startActivity(intent)
 
@@ -59,7 +59,7 @@ class MainActivity : AppCompatActivity() {
 
 
     fun delete(view:View){
-        
+
     }
 
     // sharedPreferences.edit().putString("user_name",binding.nameText.text.toString()).apply()
