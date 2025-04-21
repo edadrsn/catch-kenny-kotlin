@@ -11,6 +11,7 @@ import com.example.catchkennykotlin.databinding.ActivityMain2Binding
 class MainActivity2 : AppCompatActivity() {
 
     lateinit var binding : ActivityMain2Binding
+    var score=0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,5 +30,15 @@ class MainActivity2 : AppCompatActivity() {
             binding.gridLayoutBlue.visibility=View.VISIBLE
         }
 
+    }
+
+    fun increaseScore(view:View){
+        score+=1
+        binding.textScore.text="SCORE: ${score}"
+    }
+
+    fun decreaseScore(view:View){
+        score-=2
+        binding.textScore.text="SCORE: ${score}"
     }
 }
