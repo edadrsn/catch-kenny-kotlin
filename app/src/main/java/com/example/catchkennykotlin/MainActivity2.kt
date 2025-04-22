@@ -99,18 +99,43 @@ class MainActivity2 : AppCompatActivity() {
 
     }
 
+    fun increaseScore(view:View){
+        score+=1
+        binding.textScore.text="SCORE: ${score}"
+    }
+
+    fun decreaseScore(){
+        score-=2
+        binding.textScore.text="SCORE: ${score}"
+    }
+
+
     fun hideImages() {
 
         runnable = object : Runnable {
             override fun run() {
-
                 for(image in imageArray){
-                   image.visibility=View.VISIBLE
+                   image.visibility=View.INVISIBLE
+                }
+                for(image2 in catArray){
+                    image2.visibility=View.INVISIBLE
                 }
                 val random= java.util.Random()
-                val randomIndex=random.nextInt(9)
-                imageArray[randomIndex].visibility=View.VISIBLE
+                val randomIndex1=random.nextInt(9)
+                if (Random.nextBoolean()) {
+                    val randomIndex2 = Random.nextInt(catArray.size)
+                    catArray[randomIndex2].visibility = View.VISIBLE
+                    catArray[randomIndex2].setOnClickListener(object: View.OnClickListener {
+                        override fun onClick(v: View?) {
+                            decreaseScore()
+                        }
+                    })
+                }
+                else{
+                    imageArray[randomIndex1].visibility=View.VISIBLE
+                }
                 handler.postDelayed(runnable, 500)
+
             }
         }
         handler.post(runnable)
@@ -118,15 +143,5 @@ class MainActivity2 : AppCompatActivity() {
     }
 
 
-
-    fun increaseScore(view:View){
-        score+=1
-        binding.textScore.text="SCORE: ${score}"
-    }
-
-    fun decreaseScore(view:View){
-        score-=2
-        binding.textScore.text="SCORE: ${score}"
-    }
 
 }
