@@ -20,7 +20,7 @@ class MainActivity2 : AppCompatActivity() {
         setContentView(binding.root)
 
 
-        val getSelectedKenny=intent.getStringExtra("selectedKenny")
+        var getSelectedKenny=intent.getStringExtra("selectedKenny")
         if(getSelectedKenny.equals("orange")){
             binding.gridLayoutOrange.visibility= View.VISIBLE
         }else if(getSelectedKenny.equals("pink")){
