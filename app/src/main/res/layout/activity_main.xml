@@ -13,6 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
+        android:layout_marginBottom="15dp"
         android:fontFamily="casual"
         android:text="CATCH KENNY"
         android:textSize="35sp"
@@ -28,8 +29,8 @@
         android:id="@+id/nameText"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
         android:ems="12"
         android:fontFamily="casual"
         android:hint="User Name"
@@ -46,16 +47,17 @@
         android:id="@+id/mailText"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="30dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
         android:ems="12"
         android:fontFamily="casual"
         android:hint="User Email"
         android:inputType="text"
         android:textColorHint="#4B4949"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/textChoose"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nameText" />
 
@@ -63,20 +65,20 @@
         android:id="@+id/linearLayout2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="35dp"
+        android:layout_marginTop="20dp"
         android:layout_marginBottom="15dp"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintBottom_toTopOf="@+id/textChoose"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textChoose">
+        app:layout_constraintTop_toBottomOf="@+id/mailText">
 
         <Button
             android:id="@+id/btnSave"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginRight="15dp"
+            android:layout_marginRight="25dp"
             android:backgroundTint="#B62727"
             android:fontFamily="casual"
             android:onClick="save"
@@ -94,7 +96,7 @@
             android:id="@+id/btnDelete"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
+            android:layout_marginLeft="25dp"
             android:backgroundTint="#B62727"
             android:fontFamily="casual"
             android:onClick="delete"
@@ -113,16 +115,16 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="305dp"
-        android:layout_height="101dp"
-        android:layout_marginTop="30dp"
+        android:layout_width="301dp"
+        android:layout_height="99dp"
+        android:layout_marginTop="15dp"
         android:layout_marginBottom="15dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@+id/btnStart"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+        app:layout_constraintTop_toBottomOf="@+id/textChoose">
 
         <ImageView
             android:id="@+id/orangeKenny"
@@ -160,8 +162,8 @@
         android:id="@+id/btnStart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:layout_marginBottom="93dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="110dp"
         android:backgroundTint="#B62727"
         android:fontFamily="casual"
         android:onClick="startGame"
@@ -173,20 +175,22 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintVertical_bias="0.0"
         tools:ignore="OnClick" />
 
     <TextView
         android:id="@+id/textChoose"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="10dp"
         android:fontFamily="casual"
         android:text="CHOOSE YOUR KENNY !"
         android:textSize="25sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mailText" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
