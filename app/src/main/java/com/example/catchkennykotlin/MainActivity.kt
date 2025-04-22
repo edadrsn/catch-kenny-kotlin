@@ -30,8 +30,6 @@ class MainActivity : AppCompatActivity() {
         val blueKenny=binding.blueKenny.toString()
         binding.btnStart.isEnabled=false
 
-
-
     }
 
     fun btnOrange(view:View){

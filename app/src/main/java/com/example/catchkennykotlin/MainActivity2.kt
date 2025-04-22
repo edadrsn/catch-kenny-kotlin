@@ -1,13 +1,17 @@
 package com.example.catchkennykotlin
 
+import android.content.DialogInterface
+import android.content.Intent
 import android.media.Image
 import android.os.Bundle
+import android.os.CountDownTimer
 import android.os.Handler
 import android.os.Looper
 import android.provider.ContactsContract.CommonDataKinds.Im
 import android.view.View
 import android.widget.ImageView
 import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -35,6 +39,7 @@ class MainActivity2 : AppCompatActivity() {
 
 
         //IMAGEARRAY
+        //Imageler tanımlandı kulanıcının seçtiği kenny imageına göre ilgili imageler visible yapılacak
         orangeArray.add(binding.orange1)
         orangeArray.add(binding.orange2)
         orangeArray.add(binding.orange3)
@@ -78,6 +83,49 @@ class MainActivity2 : AppCompatActivity() {
         hideImages()
 
 
+        //Sayaç oluşturuldu
+        object:CountDownTimer(25000,1000){
+
+            //Her saniyede bir time yazısı güncelleniyor
+            override fun onTick(millisUntilFinished: Long) {
+              binding.textTime.text="TIME: ${millisUntilFinished/1000}"
+            }
+
+           //Süre bittiğinde kullanıcıya oyuna devam edip etmeyeceğini sormak için alert dialog oluşturuldu
+            //Text ve Score yazıları güncellendi
+            override fun onFinish() {
+                binding.textTime.text="TIME'S UP !"
+                binding.textScore.text="SCORE: ${score}"
+                //Runnable durdurduk
+                handler.removeCallbacks(runnable)
+                for(img in imageArray){
+                    img.visibility=View.INVISIBLE
+                }
+
+               //AlertDialog oluşturuldu
+                val alert= AlertDialog.Builder(this@MainActivity2)
+                alert.setTitle("Game Over")
+                alert.setMessage("Do you want to play again?")
+                alert.setPositiveButton("Yes",{dialoginterface,i ->
+                //Restart
+                    val intentFromMain2=intent
+                    finish()
+                    startActivity(intentFromMain2)
+
+                })
+                alert.setNegativeButton("No",{dialoginterface,i ->
+                        binding.textTime.text="TIME: 25"
+                        binding.textScore.text="SCORE: 0"
+                        val intent= Intent(this@MainActivity2,MainActivity::class.java)
+                        startActivity(intent)
+                    })
+                alert.show()
+            }
+        }.start()
+
+
+
+        //Kullanıcı hangi kenny resmini seçtiyse ilgili grid özelliği visible yapıldı
         var getSelectedKenny=intent.getStringExtra("selectedKenny")
         if(getSelectedKenny.equals("orange")){
             imageArray=orangeArray
@@ -99,17 +147,21 @@ class MainActivity2 : AppCompatActivity() {
 
     }
 
+    //Skoru artır
     fun increaseScore(view:View){
         score+=1
         binding.textScore.text="SCORE: ${score}"
     }
 
+    //Skoru azalt
     fun decreaseScore(){
         score-=2
         binding.textScore.text="SCORE: ${score}"
     }
 
 
+    //Handler ve Runnable oluşturuldu. for döngüsü ile dizideki resimlerin üzerinde gezildi ve görünümleri invisible yapıldı sonrasında random iki adet random sayı oluşturularak
+    //ilk random sayıyla ilgil indexteki image görünür yapıldı diğer random sayı ile rastgele gelen indexteki kedi resmi görünür yapıldı ve kedi resimlerine basılınca decreaseScore metodu çağrılarak skor azaltıldı
     fun hideImages() {
 
         runnable = object : Runnable {
