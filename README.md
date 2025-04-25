@@ -20,4 +20,6 @@ The user can restart the game.
 Installation
 Simply open the project in Android Studio and click the Run button. You can run it on a real device or an emulator.
 
-
+Screenshots
+![Ekran görüntüsü 2025-04-25 200011](https://github.com/user-attachments/assets/bc06878b-7200-4260-9ec4-1b5127e65257)
+![Ekran görüntüsü 2025-04-25 200028](https://github.com/user-attachments/assets/adfcf1c2-0ac3-4e3d-9a54-a9559ec11364)
